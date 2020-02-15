@@ -52,7 +52,7 @@ kanga = Kangaroo('Kanga')
 roo = Kangaroo('Roo')
 kanga.put_in_pouch('wallet')
 kanga.put_in_pouch('car keys')
-kanga.put_in_pouch(roo)
+kanga.put_in_pouch('roo')
 
 print(kanga)
 
