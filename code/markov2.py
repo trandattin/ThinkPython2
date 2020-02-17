@@ -24,7 +24,14 @@ class Markov:
     def __init__(self):
         self.suffix_map = {}        # map from prefixes to a list of suffixes
         self.prefix = ()            # current tuple of words
-
+    
+    def __str__(self):
+        res = []
+        for k,v in self.suffix_map.items():
+            t = '%s : %s,' %(k,v)
+            res.append(str(t))
+        return ' ',join(res)
+       
     def process_file(self, filename, order=2):
         """Reads a file and performs Markov analysis.
 
@@ -97,6 +104,8 @@ def main(script, filename='158-0.txt', n=100, order=2):
     else: 
         markov = Markov()
         markov.process_file(filename, order)
+        print(markov)
+        print()
         markov.random_text(n)
 
 
